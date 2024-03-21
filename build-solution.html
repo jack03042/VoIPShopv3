@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>VoIP Shop - Build a Solution</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="Assets/icon _voice_.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="nav-container">
+        <div class="navbar">
+            <a href="Landing.html">
+                <img class="logo" src="Assets/Group 1644.png" alt="Logo"/>
+            </a>
+            <div class="nav-links">
+                <div class="navbar-text">
+                    <a href="build-solution.html">Build a Solution</a>
+                    <a href="">How it Works</a>
+                    <a href="#contact-us-anchor">Contact Us</a>
+                    <a href="">
+                        <img src="Assets/Box.png"></img>
+                    </a> 
+                </div>
+                <a href="https://portal.fst-group.co.za/portal" class="client-portal">Client Portal</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="build-solution-container">
+        <div class="build-solution-container-inner tab">
+            <div class="build-solution-container-header">
+                <h1>Choose your Virtual Number</h1>
+                <p>You will need a virtual landline number in order to run the system you build.</p>
+            </div>
+            <div class="virtual-number-container-options">
+                <div class="virtual-number-container-new">
+                    <button autofocus id="new-number" name="virtual-number" onclick="virtualNumberBtn(0)">
+                        <img src="Assets/🦆 icon _phone_.png" alt="">
+                        <div>
+                            <h3>New Number</h3>
+                            <br>
+                            <p>Get a new local geographical number from anywhere in SA.</p>
+                            </div>
+                    </button>
+                    <select name="virtual-number-container-selector" class="virtual-number-container-selector" id="new-number-input">
+                        <option value="0">Pick a Region:</option>
+                        <option value="1">Cape Town (012)</option>
+                        <option value="2">Port Elizabeth (041)</option>
+                        <option value="3">George (031)</option>
+                        <option value="4">Durban (031)</option>
+                        <option value="5">East London (043)</option>
+                        <option value="6">Garden Route (044)</option>
+                        <option value="7">Grahamstown (046)</option>
+                        <option value="8">Johannesburg (011)</option>
+                    </select>
+                </div>
+                <div class="virtual-number-container-transfer">
+                    <button name="virtual-number" id="port-number" onclick="virtualNumberBtn(1)">
+                        <img src="Assets/mingcute_transfer-vertical-line.png" alt="">
+                        <div>
+                        <h3>Transfer Number</h3>
+                        <br>
+                        <p>Port your existing landline number to the virtual network.</p>
+                        </div>
+                    </button>
+                    <input type="text" id="port-number-input" placeholder="Enter your number:" pattern="0[1-5]\d{8}" maxlength="10" title="Enter a valid SA geographical number" required>
+                </div>
+            </div>
+        </div>
+        <div class="build-solution-container-inner tab">
+            <div class="build-solution-container-header">
+                <h1>How much talk time do you need?</h1>
+                <p>Talk time will be shared between all users and extensions.</p>
+            </div>
+            <div class="talk-time-container">
+                <div class="minutes-total-container">
+                    <span id="talk-time-value">500</span>
+                    <p>Minutes</p>
+                </div>
+                <div class="minutes-slider-container">
+                    <input type="range" min="0" max="10000" value="500" step="500" id="talk-time">
+                </div>
+            </div>
+        </div>
+        <div class="build-solution-container-inner tab">
+            <div class="build-solution-container-header">
+                <h1>Choose your Hardware</h1>
+                <p>Pick your handsets and we will install and configure them for you.</p>
+            </div>
+            <div class="hardware-container-outer">
+                <div class="hardware-container">
+                    <div class="hardware-card">
+                        <div class="hardware-title">
+                            <h3>Desk Phone</h3>
+                            <h2>Yealink T31P</h2>
+                            <p>With multi SIP line compatibility.</p>
+                        </div>
+                        <img class="hardware-img" src="Assets/2842b541bd1ee138ce5799a7bb26d6da.jpeg" alt="yealink t31p phone">
+                        <div class="hardware-bottom">
+                            <div class="hardware-price">
+                                <h4 data-base-price="1250" data-total-price="0">R 1 250</h4>
+                                <h5>Once-off</h5>
+                            </div>
+                            <div class="hardware-qty-container">
+                                <button class="hardware-minus" onclick="updateHardware(event, false)">
+                                    <img src="Assets/Group 1723 (1).png">
+                                </button>
+                                <div class="hardware-qty">0</div>
+                                <button class="hardware-add" onclick="updateHardware(event, true)">
+                                    <img src="Assets/Group 1723.png">
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hardware-card">
+                        <div class="hardware-title">
+                            <h3>Switchboard</h3>
+                            <h2>Yealink T43U</h2>
+                            <p>With multi SIP line compatibility.</p>
+                        </div>
+                        <img class="hardware-img" src="Assets/874c0d9402406913df120ab9d35ba86b.png" alt="Yealink T48U phone">
+                        <div class="hardware-bottom">
+                            <div class="hardware-price">
+                                <h4 data-base-price="4350" data-total-price="0">R 4 350</h4>
+                                <h5>Once-off</h5>
+                            </div>
+                            <div class="hardware-qty-container">
+                                <button class="hardware-minus" onclick="updateHardware(event, false)">
+                                    <img src="Assets/Group 1723 (1).png">
+                                </button>
+                                <div class="hardware-qty">0</div>
+                                <button class="hardware-add" onclick="updateHardware(event, true)">
+                                    <img src="Assets/Group 1723.png">
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hardware-card">
+                        <div class="hardware-title">
+                            <h3>Cordless</h3>
+                            <h2>Yealink W56h</h2>
+                            <p>Dect Handset with Excellent Battery Life.</p>
+                        </div>
+                        <img class="hardware-img" src="Assets/557a78219ed4baff249eb846f965b986.png" alt="Yealink W56H phone">
+                        <div class="hardware-bottom">
+                            <div class="hardware-price">
+                                <h4 data-base-price="3350" data-total-price="0">R 3 350</h4>
+                                <h5>Once-off</h5>
+                            </div>
+                            <div class="hardware-qty-container">
+                                <button class="hardware-minus" onclick="updateHardware(event, false)">
+                                    <img src="Assets/Group 1723 (1).png">
+                                </button>
+                                <div class="hardware-qty">0</div>
+                                <button class="hardware-add" onclick="updateHardware(event, true)">
+                                    <img src="Assets/Group 1723.png">
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hardware-card">
+                        <div class="hardware-title">
+                            <h3>Switchboard</h3>
+                            <h2>Yeastar App</h2>
+                            <p>Mobile Client with the capabilities of an IP handset</p>
+                        </div>
+                        <img class="hardware-img" src="Assets/10b21cf70f240df75a15dea0ec6e3e90.png" alt="Mobile App">
+                        <div class="hardware-bottom">
+                            <div class="hardware-price">
+                                <h4 data-base-price="350" data-total-price="0">R 350</h4>
+                                <h5>Once-off</h5>
+                            </div>
+                            <div class="hardware-qty-container">
+                                <button class="hardware-minus" onclick="updateHardware(event, false)">
+                                    <img src="Assets/Group 1723 (1).png">
+                                </button>
+                                <div class="hardware-qty">0</div>
+                                <button class="hardware-add" onclick="updateHardware(event, true)">
+                                    <img src="Assets/Group 1723.png">
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            <button id="scroll-button">Scroll</button>
+        </div>
+        <div class="build-solution-container-inner tab">
+            <div class="build-solution-container-header">
+                <h1>Select your system features</h1>
+                <p>Configure your system to function the way that you want.</p>
+            </div>
+            <div class="features-container">
+                <div class="features-card">
+                    <img src="Assets/mingcute_transfer-vertical-line copy.png" alt="">
+                    <div class="features-card-text">
+                        <h3>Call Transferring</h3>
+                        <p>Send and recieve calls between each of your extensions.</p>
+                    </div>
+                    <i>
+                        <button class="features-add" onclick="featuresAdd(event)"><img src="Assets/Group 1723.png" alt=""></button>
+                    </i>
+                </div>
+                <div class="features-card">
+                    <img src="Assets/Vector.png" alt="">
+                    <div class="features-card-text">
+                        <h3>Ring Groups</h3>
+                        <p>Calls can ring on multiple selected extensions at the same time.</p>
+                    </div>
+                    <i>
+                        <button class="features-add" onclick="featuresAdd(event)"><img src="Assets/Group 1723.png" alt=""></button>
+                    </i>
+                </div>
+                <div class="features-card">
+                    <img src="Assets/Group.png" alt="">
+                    <div class="features-card-text">
+                        <h3>Auto Attendant</h3>
+                        <p>A virtual answering assistant to divert calls to the relevant department.</p>
+                    </div>
+                    <i>
+                        <button class="features-add" onclick="featuresAdd(event)"><img src="Assets/Group 1723.png" alt=""></button>
+                    </i>
+                </div>
+                <div class="features-card">
+                    <img src="Assets/mdi_microphone.png" alt="">
+                    <div class="features-card-text">
+                        <h3>Call Recording</h3>
+                        <p>Record up to 500 hrs of talk time.</p>
+                    </div>
+                    <i>
+                        <button class="features-add" onclick="featuresAdd(event)"><img src="Assets/Group 1723.png" alt=""></button>
+                    </i>
+                </div>
+                <div class="features-card" id="no-features">
+                    <img src="Assets/raphael_no.png" alt="">
+                    <div class="features-card-text">
+                        <h3>None</h3>
+                        <p>No cloud routing means calls will ring on all my devices at once.</p>
+                    </div>
+                    <i>
+                        <button class="features-add" onclick="featuresAdd(event)"><img src="Assets/Group 1723.png" alt=""></button>
+                    </i>
+                </div>
+            </div>
+        </div>
+        <div class="build-solution-container-inner tab">
+            <div class="check-out">
+                <div class="review-solution">
+                    <h1>Review your Solution</h1>
+                    <br>
+                    <div class="review-services">
+                        <table>
+                            <thead>
+                                <th>Service</th>
+                                <th></th>
+                                <th>Quantity</th>
+                                <th>Monthly</th>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <img src="Assets/Group 1684.png" alt="">
+                                    <td>
+                                        <h4>Talk Time</h4>
+                                        <p>Description</p>
+                                    </td>
+                                    <td>
+                                        <p>5</p>
+                                    </td>
+                                    <td>
+                                        <p>R4 500</p>
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <td></td>
+                                <td></td>
+                                <td>Total:</td>
+                                <td id="total-monthly-cost">R10 000</td>
+                            </tfoot>
+                        </table>
+                    </div>
+                    <br>
+                    <div class="review-hardware">
+                        <table>
+                            <thead>
+                                <th>Hardware</th>
+                                <th></th>
+                                <th>Quantity</th>
+                                <th>Once-off</th>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <img src="Assets/2842b541bd1ee138ce5799a7bb26d6da.jpeg" alt="">
+                                    </td>
+                                    <td>
+                                        <h4>Yealink T33U</h4>
+                                        <p>VoIP Desk Phone</p>
+                                    </td>
+                                    <td>
+                                        <p>5</p>
+                                    </td>
+                                    <td>
+                                        <p>R5 000</p>
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td>Total:</td>
+                                    <td  id="total-once-off-cost">R10 000</td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td>Due Today:</td>
+                                    <td>R45 000</td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                </div>
+                <div class="client-info">
+                    
+                    <form action="" class="basket-form">
+                        <h3>Client Information</h3>
+                        <br>
+                        <label for="Name">Business Name*</label>
+                        <input class="text-box-small" type="text" id="name" name="name" placeholder="VoIP Shop" required>
+                        <br>
+                        <label for="email">Email*</label>
+                        <input class="text-box-small" type="email" id="email" name="email" placeholder="example@mail.com" required>
+                        <br>
+                        <label for="vat-no">Vat Number</label>
+                        <input class="text-box-small" type="text" id="vat-no" placeholder="123456789" required>
+                        <br>
+                        <label for="install-address">Installation Address*</label>
+                        <input class="text-box-small" type="text" id="install-street" placeholder="Street" required>
+                        <input class="text-box-small" type="text" id="install-city" placeholder="City" required>
+                        <input class="text-box-small" type="text" id="install-province" placeholder="Province" required>
+                        <br>
+                        <label for="file-upload-provider">Current Voice Account*</label>
+                        <input type="file">
+
+                        <!-- /<input type="submit" class="closed-button" value="Schedule Install"> -->
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="build-solution-container-footer">
+            <div class="footer-total-container">
+                <div class="footer-total">
+                    <h4 id="total-footer-price">R 90</h4>
+                    <p id="total-cost-period">/mo.</p>
+                </div>
+                <button class="build-solution-container-button" id="next-button" onclick="nextPrev(1)" disabled>
+                    <img src="Assets/Group 1762.png" alt="">
+                </button>
+            </div>
+            <div class="build-solution-container-indicator">
+                <img src="" alt="">
+            </div>
+        </div>
+
+        <div class="terms">
+            <h4>Terms & Conditions</h4>
+            <br>
+            <p>
+                VoIP technology facilitates phone calls over the internet, necessitating a reliable internet connection like Fibre or LTE for optimal performance. The effectiveness of the VoIP service is closely tied to the quality of your internet connection during calls. We advise using connections known for minimal congestion and low latency, such as Fibre or Fixed LTE, to ensure superior call quality. While other forms of connectivity like DSL, 3G, Wi-Fi, or Mobile Data may be compatible, they are not preferred due to their susceptibility to congestion and high latency, which can degrade call quality. Additionally, the cost of the system encompasses not only the installation of hardware and handsets but also includes a switch to support the number of devices. However, clients must have an internet router with an available ethernet port. It is also required that all handsets be connected via ethernet cable and not be positioned more than 20 meters away from the switch for each device.
+            </p>
+        </div>
+    </div>
+    <script src="build-solution.js" src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</body>
+<footer>
+    <div class="footer">
+        <div class="left-footer">
+            <p>© 2024 VoIP Shop | All rights reserved.</p>
+        </div>
+        <div class="centre-footer">
+            <img src="Assets/Group 1642logo (1).png" alt="footer logo">
+        </div>
+        <div class="right-footer">
+            <p>Contact | Terms & Conditions | Portal</p>
+        </div>
+    </div>
+</footer>
+</html>
