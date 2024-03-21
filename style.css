@@ -1143,7 +1143,12 @@ table img{
     font-weight: 300;
 }
 
-
+@media screen and (max-width: 768px) {
+    .features-card-text p {
+        overflow-wrap: break-word;
+        word-break: break-all;
+    }
+}
 
 @media screen and (max-width: 850px){
     .navbar-text, .client-portal{
