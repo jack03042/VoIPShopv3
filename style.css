@@ -1000,6 +1000,8 @@ form label{
 .features-card-text p{
     font-size: 18px;
     font-weight: 300;
+    overflow-wrap: break-word;
+    word-break: break-all;
 }
 
 .features-add{
