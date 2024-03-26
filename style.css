@@ -168,19 +168,15 @@ nav{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border-radius: 20px;
-    background-color: whitesmoke;
+    border-radius: 15px;
+    background-color: white;
     max-width: 1500px;
-    box-shadow: 7px 7px 15px #021c3514;
+    box-shadow: 0px 0px 15px #021c3514;
+    /* border: 1px solid #ccc; */
     opacity: 0.9;
     z-index: 300;
     transition: 0.5s ease;
 }  
-
-nav:hover{
-    opacity: 1;
-    box-shadow: 7px 7px 15px #021c3527;
-}
 
 .logo{
     width: 180px;
@@ -194,21 +190,22 @@ nav:hover{
     gap: 40px;
 }
 
-.navbar-text {
+.navbar-text{
     display: flex;
     flex-direction: row;
     align-items: center;
     gap: 40px;
 }
 
-.navbar-text a {
+.navbar-text a{
     font-family: inherit;
     font-size: 18px;
     font-weight: 400;
+    color: black;
 }
 
 .navbar-text a:hover{
-    color: #0071E3;
+    color: #3d3d3d;
 }
 
 .navbar-text img{
@@ -216,24 +213,27 @@ nav:hover{
     height: 30px;
 }
 
-.client-portal{
-    background-color:#2A9D8F;
-    border-radius: 16px;
-    padding: 12px 20px;
-    margin: 3px 6px;
-    color: rgba(245, 245, 245, 0.948);
+.client-portal a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 15px;
+    border: 2px solid #0071E3;
+    padding: 10px 20px;
     font-size: 18px;
+    font-weight: 400;
+    color: #0071E3;
+    white-space: nowrap;
+    z-index: 1000;
+    transition: 0.5s ease;
 }
 
-.client-portal:hover{
+.client-portal a:hover{
+    background-color: #0071E3;
     color: white;
+    animation-delay: 200ms;
 }
-
-.menu-icon, .dropdown-menu{
-    display: none;
-}
-
-
 /* Footer !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
 
 footer{
@@ -272,7 +272,7 @@ main{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 50px 100px; 
+    margin: 100px; 
     gap: 180px;
     max-width: 1500px;
     /* border: 1px solid #ccc; */
@@ -282,7 +282,6 @@ main{
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 50px;
     /* border: 1px solid #ccc; */
     /* scroll-snap-type: */
 }
