@@ -11,29 +11,32 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
 </head>
 <body>
-    <nav class="nav-container">
-        <div class="navbar">
+    <header>
+        <nav>
             <a href="index.html">
                 <img class="logo" src="Assets/Group 1644.png" alt="Logo"/>
             </a>
             <div class="nav-links">
                 <div class="navbar-text">
-                    <a href="build-solution.html">Build a Solution</a>
-                    <a href="">How it Works</a>
+                    <a href="build-solution.html">Pricing Plans</a>
+                    <a href="#">How it Works</a> 
                     <a href="contact.html">Contact Us</a>
-                    <a href="">
-                        <img src="Assets/Box.png"></img>
+                    <a href="#">
+                        <img src="Assets/Box.png" alt="Description of Image" />
                     </a> 
                 </div>
-                <a href="" class="client-portal">Client Portal</a>
+                <div class="client-portal">
+                    <a href="#">Client Portal</a> 
+                </div>
+                
             </div>
-        </div>
-    </nav>
+        </nav>
+    </header>
 
     <div class="build-solution-container">
         <div class="build-solution-container-inner tab">
             <div class="build-solution-container-header">
-                <h1>Choose your Virtual Number</h1>
+                <h1>Choose a Virtual Number</h1>
                 <p>You will need a virtual landline number in order to run the system you build.</p>
             </div>
             <div class="virtual-number-container-options">
@@ -78,11 +81,27 @@
             </div>
             <div class="talk-time-container">
                 <div class="minutes-total-container">
-                    <span id="talk-time-value">500</span>
+                    <span id="talk-time-value"></span>
                     <p>Minutes</p>
                 </div>
                 <div class="minutes-slider-container">
-                    <input type="range" min="0" max="10000" value="500" step="500" id="talk-time">
+                    <div class="minutes-slider-indicators">
+                        <p>0</p>
+                        <p>|</p>
+                        <p>|</p>
+                        <p>|</p>
+                        <p>|</p>
+                        <p>|</p>
+                        <p>|</p>
+                        <p>|</p>
+                        <p>|</p>
+                        <p>|</p>
+                        <p>10 000</p>
+                    </div>
+                    <input type="range" min="0" max="10000" value="0" step="500" id="talk-time">
+                </div>
+                <div class="talk-time-description-container">
+                    <p id="talk-time-description"></p>
                 </div>
             </div>
         </div>
@@ -107,11 +126,11 @@
                             </div>
                             <div class="hardware-qty-container">
                                 <button class="hardware-minus" onclick="updateHardware(event, false)">
-                                    <img src="Assets/Group 1723 (1).png">
+                                    <img src="Assets/plus 2.png">
                                 </button>
                                 <div class="hardware-qty">0</div>
                                 <button class="hardware-add" onclick="updateHardware(event, true)">
-                                    <img src="Assets/Group 1723.png">
+                                    <img src="Assets/plus 1.png">
                                 </button>
                             </div>
                         </div>
@@ -130,11 +149,11 @@
                             </div>
                             <div class="hardware-qty-container">
                                 <button class="hardware-minus" onclick="updateHardware(event, false)">
-                                    <img src="Assets/Group 1723 (1).png">
+                                    <img src="Assets/plus 2.png">
                                 </button>
                                 <div class="hardware-qty">0</div>
                                 <button class="hardware-add" onclick="updateHardware(event, true)">
-                                    <img src="Assets/Group 1723.png">
+                                    <img src="Assets/plus 1.png">
                                 </button>
                             </div>
                         </div>
@@ -145,7 +164,7 @@
                             <h2>Yealink W56h</h2>
                             <p>Dect Handset with Excellent Battery Life.</p>
                         </div>
-                        <img class="hardware-img" src="Assets/557a78219ed4baff249eb846f965b986.png" alt="Yealink W56H phone">
+                        <img class="hardware-img" src="Assets/Screenshot 2024-03-28 at 09.22.11.png" alt="Yealink W56H phone">
                         <div class="hardware-bottom">
                             <div class="hardware-price">
                                 <h4 data-base-price="3350" data-total-price="0">R 3 350</h4>
@@ -153,11 +172,11 @@
                             </div>
                             <div class="hardware-qty-container">
                                 <button class="hardware-minus" onclick="updateHardware(event, false)">
-                                    <img src="Assets/Group 1723 (1).png">
+                                    <img src="Assets/plus 2.png">
                                 </button>
                                 <div class="hardware-qty">0</div>
                                 <button class="hardware-add" onclick="updateHardware(event, true)">
-                                    <img src="Assets/Group 1723.png">
+                                    <img src="Assets/plus 1.png">
                                 </button>
                             </div>
                         </div>
@@ -176,11 +195,11 @@
                             </div>
                             <div class="hardware-qty-container">
                                 <button class="hardware-minus" onclick="updateHardware(event, false)">
-                                    <img src="Assets/Group 1723 (1).png">
+                                    <img src="Assets/plus 2.png">
                                 </button>
                                 <div class="hardware-qty">0</div>
                                 <button class="hardware-add" onclick="updateHardware(event, true)">
-                                    <img src="Assets/Group 1723.png">
+                                    <img src="Assets/plus 1.png">
                                 </button>
                             </div>
                         </div>
@@ -203,7 +222,7 @@
                         <p>Send and recieve calls between each of your extensions.</p>
                     </div>
                     <i>
-                        <button class="features-add" onclick="featuresAdd(event)"><img src="Assets/Group 1723.png" alt=""></button>
+                        <button class="features-add" onclick="featuresAdd(event)"><img src="Assets/plus 1.png" alt=""></button>
                     </i>
                 </div>
                 <div class="features-card">
@@ -213,7 +232,7 @@
                         <p>Calls can ring on multiple selected extensions at the same time.</p>
                     </div>
                     <i>
-                        <button class="features-add" onclick="featuresAdd(event)"><img src="Assets/Group 1723.png" alt=""></button>
+                        <button class="features-add" onclick="featuresAdd(event)"><img src="Assets/plus 1.png" alt=""></button>
                     </i>
                 </div>
                 <div class="features-card">
@@ -223,7 +242,7 @@
                         <p>A virtual answering assistant to divert calls to the relevant department.</p>
                     </div>
                     <i>
-                        <button class="features-add" onclick="featuresAdd(event)"><img src="Assets/Group 1723.png" alt=""></button>
+                        <button class="features-add" onclick="featuresAdd(event)"><img src="Assets/plus 1.png" alt=""></button>
                     </i>
                 </div>
                 <div class="features-card">
@@ -233,7 +252,7 @@
                         <p>Record up to 500 hrs of talk time.</p>
                     </div>
                     <i>
-                        <button class="features-add" onclick="featuresAdd(event)"><img src="Assets/Group 1723.png" alt=""></button>
+                        <button class="features-add" onclick="featuresAdd(event)"><img src="Assets/plus 1.png" alt=""></button>
                     </i>
                 </div>
                 <div class="features-card" id="no-features">
@@ -243,7 +262,7 @@
                         <p>No cloud routing means calls will ring on all my devices at once.</p>
                     </div>
                     <i>
-                        <button class="features-add" onclick="featuresAdd(event)"><img src="Assets/Group 1723.png" alt=""></button>
+                        <button class="features-add" onclick="featuresAdd(event)"><img src="Assets/plus 1.png" alt=""></button>
                     </i>
                 </div>
             </div>
@@ -370,19 +389,17 @@
                 <img src="" alt="">
             </div>
         </div>
-
-        <div class="terms">
-            <h4>Terms & Conditions</h4>
-            <br>
-            <p>
-                VoIP technology facilitates phone calls over the internet, necessitating a reliable internet connection like Fibre or LTE for optimal performance. The effectiveness of the VoIP service is closely tied to the quality of your internet connection during calls. We advise using connections known for minimal congestion and low latency, such as Fibre or Fixed LTE, to ensure superior call quality. While other forms of connectivity like DSL, 3G, Wi-Fi, or Mobile Data may be compatible, they are not preferred due to their susceptibility to congestion and high latency, which can degrade call quality. Additionally, the cost of the system encompasses not only the installation of hardware and handsets but also includes a switch to support the number of devices. However, clients must have an internet router with an available ethernet port. It is also required that all handsets be connected via ethernet cable and not be positioned more than 20 meters away from the switch for each device.
-            </p>
-        </div>
     </div>
-    <script src="build-solution.js" src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-</body>
-<footer>
-    <div class="footer">
+
+    <div class="terms">
+        <h4>Terms & Conditions</h4>
+        <br>
+        <p>
+            VoIP technology facilitates phone calls over the internet, necessitating a reliable internet connection like Fibre or LTE for optimal performance. The effectiveness of the VoIP service is closely tied to the quality of your internet connection during calls. We advise using connections known for minimal congestion and low latency, such as Fibre or Fixed LTE, to ensure superior call quality. While other forms of connectivity like DSL, 3G, Wi-Fi, or Mobile Data may be compatible, they are not preferred due to their susceptibility to congestion and high latency, which can degrade call quality. Additionally, the cost of the system encompasses not only the installation of hardware and handsets but also includes a switch to support the number of devices. However, clients must have an internet router with an available ethernet port. It is also required that all handsets be connected via ethernet cable and not be positioned more than 20 meters away from the switch for each device.
+        </p>
+    </div>
+
+    <footer>
         <div class="left-footer">
             <p>© 2024 VoIP Shop | All rights reserved.</p>
         </div>
@@ -392,6 +409,8 @@
         <div class="right-footer">
             <p>Contact | Terms & Conditions | Portal</p>
         </div>
-    </div>
-</footer>
+    </footer>
+
+    <script src="build-solution.js" src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</body>
 </html>

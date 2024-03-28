@@ -260,22 +260,52 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
     //Talk time
-    document.getElementById('talk-time').addEventListener('input', function () {
-        const talkTimeValue = document.getElementById('talk-time').value;
-        const perMinutePrice = 0.28;
-        //const talkTImeCost = document.getElementById('talk-time-cost').value;
 
+    // Initialize progress on page load for the range slider
+    const initialTalkTimeValue = document.getElementById('talk-time').value;
+    const max = parseInt(document.getElementById('talk-time').max, 10);
+    const min = parseInt(document.getElementById('talk-time').min, 10);
+    const percentage = ((initialTalkTimeValue - min) / (max - min)) * 100;
+    document.getElementById('talk-time').style.background = `linear-gradient(90deg, #0071E3 ${percentage}%, #D9D9D9 ${percentage}%)`;
+
+    document.getElementById('talk-time').addEventListener('input', function () {
+        const talkTimeValue = this.value; // Using 'this' as it refers to the element that triggered the event
+        const perMinutePrice = 0.28;
+        const talkTimeDescription = document.getElementById('talk-time-description');
+    
+        // Update displayed values for talk time
         document.getElementById('talk-time-value').textContent = new Intl.NumberFormat('fr-FR').format(talkTimeValue);
-        document.getElementById('total-footer-price').textContent = formatPrice(talkTimeValue * perMinutePrice)
+        document.getElementById('total-footer-price').textContent = formatPrice(talkTimeValue * perMinutePrice);
         updateServiceArray('Talk Time', {
             image: 'Assets/Group 1684.png',
             title: 'Talk Time',
             description: '',
             quantity: talkTimeValue + ' Minutes',
             price: formatPrice(talkTimeValue * perMinutePrice)
-        });
-        checkValidity(true)
+        }); // Ensure this function call is properly closed with a semicolon
+    
+        // Conditional descriptions based on talkTimeValue
+        if (talkTimeValue >= 500 && talkTimeValue <= 1500) {
+            talkTimeDescription.textContent = 'For small businesses (1-2 employees)';
+        } else if (talkTimeValue > 1500 && talkTimeValue <= 5000) {
+            talkTimeDescription.textContent = 'For medium businesses (3-10 employees)';
+        } else if (talkTimeValue > 5000) {
+            talkTimeDescription.textContent = 'For large businesses (10+ employees)';
+        } else if (talkTimeValue < 500) {
+            talkTimeDescription.textContent = 'For businesses who only recieve calls';
+        }
+    
+        checkValidity(true);
+    
+        // Update range slider progress
+        const max = parseInt(this.max, 10);
+        const min = parseInt(this.min, 10);
+        const value = parseInt(talkTimeValue, 10);
+        const percentage = ((value - min) / (max - min)) * 100;
+        // Update the background gradient to reflect the current value
+        this.style.background = `linear-gradient(90deg, #0071E3 ${percentage}%, #D9D9D9 ${percentage}%)`;
     });
+    
 
     //Hardware
     window.updateHardware = function updateHardware(event, isAdding) {

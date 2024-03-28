@@ -171,7 +171,7 @@ nav{
     border-radius: 15px;
     background-color: white;
     max-width: 1500px;
-    box-shadow: 0px 0px 15px #021c3514;
+    /* box-shadow: 0px 0px 15px #021c3514; */
     /* border: 1px solid #ccc; */
     opacity: 0.9;
     z-index: 300;
@@ -585,15 +585,21 @@ form label{
     flex-direction: column;
     justify-content: center;
     background-color: rgb(250,250,252);
-    border-radius: 30px;
+    /* border-radius: 30px; */
     padding-top: 40px;
+    align-items: center; /* Center the content vertically */
+    overflow: hidden; /* Prevents overflow, but be cautious using this */
 }
 
 .build-solution-container-inner{
     display: flex;
     flex-direction: column;
     justify-content: center;
+    width: 100%; /* Ensure it spans the full width */
+    width: 1500px;
+    margin: 0 auto; /* Center it within the parent */
 }
+
 
 .tab{
     display: none;
@@ -608,11 +614,12 @@ form label{
 }
 
 .build-solution-container-header h1{
-    color: #264653;
+    color: #07122b;
 }
 
 .build-solution-container-header p{
     font-size: 18px;
+    font-weight: 300;
 }
 
 .build-solution-container-footer{
@@ -677,6 +684,7 @@ form label{
     display: flex;
     flex-direction: column;
     align-items: center;
+    /* justify-content: center; */
     gap: 20px;
     /* border: 1px solid black; */
 }
@@ -712,8 +720,8 @@ form label{
 }
 
 .virtual-number-container-options button.selected::after {
-    width: 20px; 
-    height: 20px;
+    width: 35px; 
+    height: 35px;
     background-color: #0071E3; 
     border: 8px solid rgb(250,250,252);
 }
@@ -738,7 +746,6 @@ form label{
     to {
         transform: translateY(0);
     }
-    
 }
 
 .slide-in-right{
@@ -753,8 +760,6 @@ form label{
         transform: translateX(0);
     }
 }
-
-
 
 .virtual-number-container-options img{
     width: 30%;
@@ -800,7 +805,6 @@ form label{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    text-align: center;
     height: 300px;
     gap: 30px;
 }
@@ -812,17 +816,82 @@ form label{
     justify-content: center;
     gap: 4px;
     font-size: 30px;
-    font-weight: 00;
+    font-weight: 700;
     color: #2A9D8F;
 }
 
+.minutes-slider-container{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    /* border: 1px solid #ccc; */
+}
+
+.minutes-slider-indicators{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 20px;
+    width: 400px;
+}
+
+.minutes-slider-indicators p{
+    font-size: 18px;
+    font-weight: 300;
+    color: grey;
+}
+
+input[type="range"] {
+    -webkit-appearance: none; /* Essential to remove default styling in WebKit browsers */
+    appearance: none;
+    width: 400px;
+    height: 20px;
+    background-color: transparent; /* Background will be set via JS */
+    border-radius: 10px;
+    outline: none;
+    transition: background 0.2s ease; /* Smooth transition for the background */
+}
+
+/* Thumb for WebKit browsers */
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: white; /* Adjust as needed */
+    /* border: 6px solid whitesmoke; */
+    cursor: pointer;
+    box-shadow: 0px 0px 10px #3d3d3d;
+}
+
+/* Thumb for Firefox */
+input[type="range"]::-moz-range-thumb {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background: #fff; /* Adjust as needed */
+    border: 6px solid #444;
+    cursor: pointer;
+}
+
+.talk-time-description-container{
+    height: 30px;
+}
+
+.talk-time-description-container p{
+    font-size: 18px;
+    font-weight: 300;
+    color: #3d3d3d;
+}
 
 /* Hardware */
 .hardware-container-outer{
     display: flex;
     position: relative;
     white-space: nowrap;
-    width:auto;
+    width: auto;
     overflow-x : hidden;
 }
 
@@ -853,6 +922,7 @@ form label{
 
 .hardware-container p{
     color: #3d3d3d;
+    text-wrap: wrap;
 }
 
 .hardware-container h4{
@@ -866,8 +936,8 @@ form label{
 }
 
 .hardware-card{
-    height: 371px;
-    width: 345px;
+    height: 381px;
+    width: 355px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -882,12 +952,10 @@ form label{
 
 .hardware-card:hover{
     box-shadow: 7px 7px 15px #021c3514;
-    padding: 32px;
 }
 
 .selected{
     border: 3px solid #0071E3;
-    padding: 32px; 
 }
 
 .hardware-title{
@@ -900,8 +968,8 @@ form label{
     width: 100%;
     height: auto; 
     object-fit: cover;
-    max-width: 200px;
-    max-height: 200px;
+    max-width: 180px;
+    max-height: 180px;
 }
 
 .hardware-bottom{
@@ -947,7 +1015,7 @@ form label{
 }
 
 .hardware-qty-container img{
-    width: 50%;
+    width: 65%;
 }
 
 
@@ -957,11 +1025,13 @@ form label{
 .features-container{
     display: flex;
     flex-direction: row;
+    align-items: center;
     gap: 20px;
-    white-space: nowrap;
-    overflow-x : auto;
     padding: 0px 100px;
     height: 350px;
+    width: auto;
+    overflow-x :auto;
+    /* border: 1px solid #ccc; */
 }
 
 .features-card{
@@ -972,8 +1042,8 @@ form label{
     background-color: white;
     border-radius: 15px;
     padding: 30px;
-    width: 312px;
-    height: 223px;
+    width: 372px;
+    height: 263px;
     text-wrap: wrap;
     transition: 0.5s ease;
     flex: none;
@@ -981,12 +1051,11 @@ form label{
 
 .features-card:hover{
     box-shadow: 7px 7px 15px #021c3514;
-    padding: 32px;
+    /* padding: 32px; */
 }
 
 .features-card.selected{
     border: 3px solid #0071E3;
-    padding: 32px; 
 }
 
 .features-container img{
@@ -1016,13 +1085,13 @@ form label{
     font-size: 18px;
     font-weight: 300;
     overflow-wrap: break-word;
-    word-break: break-all;
 }
 
 .features-add{
     position:relative;
     display: flex;
-    float: right;
+    /* float: right; */
+    float: inline-end;
     justify-content: center;
     align-items: center;
     background-color: #0071E3;
@@ -1034,11 +1103,12 @@ form label{
 }
 
 .features-add img{
-    width: 50%;
+    width: 65%;
 }
 
 .features-add.clicked{
     transform: rotate(45deg);
+    background-color: #566171;
 }
 
 /* Basket */
@@ -1055,7 +1125,6 @@ form label{
     flex-direction: column;
 
 }
-
 
 .review-services{
     background-color: white;
@@ -1125,6 +1194,8 @@ table img{
 
 
 .client-info form{
+    margin-top: 55px;
+    width: 550px;
     box-shadow: none;
 }
 
@@ -1135,14 +1206,14 @@ table img{
 .terms{
     display: flex;
     flex-direction: column;
-    padding: 40px 80px;
+    padding: 40px 0px;
     background-color: white;
 }
 
 .terms h4{
     display: flex;
     width: 80%;
-    max-width: 1300px;
+    /* max-width: 1300px; */
     border-bottom: 0.1px solid grey;
     align-self: center;
 }
@@ -1151,7 +1222,7 @@ table img{
     display: flex;
     align-self: center;
     width: 80%;
-    max-width: 1300px;
+    /* max-width: 1300px; */
     text-align: justify;
     letter-spacing: 0.2px;
     word-spacing: 1px;
