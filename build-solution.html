@@ -36,77 +36,7 @@
     <div class="build-solution-container">
         <div class="build-solution-container-inner tab">
             <div class="build-solution-container-header">
-                <h1>Choose a Virtual Number</h1>
-                <p>You will need a virtual landline number in order to run the system you build.</p>
-            </div>
-            <div class="virtual-number-container-options">
-                <div class="virtual-number-container-new">
-                    <button autofocus id="new-number" name="virtual-number" onclick="virtualNumberBtn(0)">
-                        <img src="Assets/🦆 icon _phone_.png" alt="">
-                        <div>
-                            <h3>New Number</h3>
-                            <br>
-                            <p>Get a new local geographical number from anywhere in SA.</p>
-                            </div>
-                    </button>
-                    <select name="virtual-number-container-selector" class="virtual-number-container-selector" id="new-number-input">
-                        <option value="0">Pick a Region:</option>
-                        <option value="1">Cape Town (012)</option>
-                        <option value="2">Port Elizabeth (041)</option>
-                        <option value="3">George (031)</option>
-                        <option value="4">Durban (031)</option>
-                        <option value="5">East London (043)</option>
-                        <option value="6">Garden Route (044)</option>
-                        <option value="7">Grahamstown (046)</option>
-                        <option value="8">Johannesburg (011)</option>
-                    </select>
-                </div>
-                <div class="virtual-number-container-transfer">
-                    <button name="virtual-number" id="port-number" onclick="virtualNumberBtn(1)">
-                        <img src="Assets/mingcute_transfer-vertical-line.png" alt="">
-                        <div>
-                        <h3>Transfer Number</h3>
-                        <br>
-                        <p>Port your existing landline number to the virtual network.</p>
-                        </div>
-                    </button>
-                    <input type="text" id="port-number-input" placeholder="Enter your number:" pattern="0[1-5]\d{8}" maxlength="10" title="Enter a valid SA geographical number" required>
-                </div>
-            </div>
-        </div>
-        <div class="build-solution-container-inner tab">
-            <div class="build-solution-container-header">
-                <h1>How much talk time do you need?</h1>
-                <p>Talk time will be shared between all users and extensions.</p>
-            </div>
-            <div class="talk-time-container">
-                <div class="minutes-total-container">
-                    <span id="talk-time-value"></span>
-                    <p>Minutes</p>
-                </div>
-                <div class="minutes-slider-container">
-                    <div class="minutes-slider-indicators">
-                        <p>0</p>
-                        <p>|</p>
-                        <p>|</p>
-                        <p>|</p>
-                        <p>|</p>
-                        <p>|</p>
-                        <p>|</p>
-                        <p>|</p>
-                        <p>|</p>
-                        <p>|</p>
-                        <p>10 000</p>
-                    </div>
-                    <input type="range" min="0" max="10000" value="0" step="500" id="talk-time">
-                </div>
-                <div class="talk-time-description-container">
-                    <p id="talk-time-description"></p>
-                </div>
-            </div>
-        </div>
-        <div class="build-solution-container-inner tab">
-            <div class="build-solution-container-header">
+                <h3>Step 1</h3>
                 <h1>Choose your Hardware</h1>
                 <p>Pick your handsets and we will install and configure them for you.</p>
             </div>
@@ -211,6 +141,80 @@
         </div>
         <div class="build-solution-container-inner tab">
             <div class="build-solution-container-header">
+                <h3>Step 2</h3>
+                <h1>Choose a Virtual Number</h1>
+                <p>You will need a virtual landline number in order to run the system you build.</p>
+            </div>
+            <div class="virtual-number-container-options">
+                <div class="virtual-number-container-new">
+                    <button autofocus id="new-number" name="virtual-number" onclick="virtualNumberBtn(0)">
+                        <img src="Assets/🦆 icon _phone_.png" alt="">
+                        <div>
+                            <h3>New Number</h3>
+                            <br>
+                            <p>Get a new local geographical number from anywhere in SA.</p>
+                            </div>
+                    </button>
+                    <select name="virtual-number-container-selector" class="virtual-number-container-selector" id="new-number-input">
+                        <option value="0">Pick a Region:</option>
+                        <option value="1">Cape Town (012)</option>
+                        <option value="2">Port Elizabeth (041)</option>
+                        <option value="3">George (031)</option>
+                        <option value="4">Durban (031)</option>
+                        <option value="5">East London (043)</option>
+                        <option value="6">Garden Route (044)</option>
+                        <option value="7">Grahamstown (046)</option>
+                        <option value="8">Johannesburg (011)</option>
+                    </select>
+                </div>
+                <div class="virtual-number-container-transfer">
+                    <button name="virtual-number" id="port-number" onclick="virtualNumberBtn(1)">
+                        <img src="Assets/mingcute_transfer-vertical-line.png" alt="">
+                        <div>
+                        <h3>Transfer Number</h3>
+                        <br>
+                        <p>Port your existing landline number to the virtual network.</p>
+                        </div>
+                    </button>
+                    <input type="text" id="port-number-input" placeholder="Enter your number:" pattern="0[1-5]\d{8}" maxlength="10" title="Enter a valid SA geographical number" required>
+                </div>
+            </div>
+        </div>
+        <div class="build-solution-container-inner tab">
+            <div class="build-solution-container-header">
+                <h3>Step 3</h3>
+                <h1>How much talk time do you need?</h1>
+                <p>Talk time will be shared between all users and extensions.</p>
+            </div>
+            <div class="talk-time-container">
+                <div class="minutes-total-container">
+                    <span id="talk-time-value"></span>
+                    <p>Minutes</p>
+                </div>
+                <div class="minutes-slider-container">
+                    <div class="minutes-slider-indicators">
+                        <p>0</p>
+                        <p>|</p>
+                        <p>|</p>
+                        <p>|</p>
+                        <p>|</p>
+                        <p>|</p>
+                        <p>|</p>
+                        <p>|</p>
+                        <p>|</p>
+                        <p>|</p>
+                        <p>10 000</p>
+                    </div>
+                    <input type="range" min="0" max="10000" value="0" step="500" id="talk-time">
+                </div>
+                <div class="talk-time-description-container">
+                    <p id="talk-time-description"></p>
+                </div>
+            </div>
+        </div>
+        <div class="build-solution-container-inner tab">
+            <div class="build-solution-container-header">
+                <h3>Step 4</h3>
                 <h1>Select your system features</h1>
                 <p>Configure your system to function the way that you want.</p>
             </div>
@@ -374,7 +378,6 @@
                 </div>
             </div>
         </div>
-
         <div class="build-solution-container-footer">
             <div class="footer-total-container">
                 <div class="footer-total">

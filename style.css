@@ -553,6 +553,18 @@ main{
     margin: 10px 0px;
 }
 
+iframe{
+    display: flex;
+    flex-direction: column;
+    border-radius: 15px;
+    gap: 10px;
+    padding: 50px;
+    box-shadow: 0px 0px 50px 10px #D9D9D9;
+    width: 700px;
+    height: 1165px;
+    background-color: white;
+}
+
 form{
     display: flex;
     flex-direction: column;
@@ -560,7 +572,7 @@ form{
     gap: 10px;
     padding: 50px;
     box-shadow: 0px 0px 50px 10px #D9D9D9;
-    width: 450px;
+    width: 500px;
     background-color: white;
 }
 
@@ -573,12 +585,30 @@ form label{
     font-weight: 400;
 }
 
-.contact-us-form .closed-button{
-    background-color: #E76F51;
-    border: none;
+.submit-button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 15px;
+    border: 2px solid #0071E3;
+    padding: 10px 20px;
+    font-size: 18px;
+    font-weight: 400;
+    color: #0071E3;
+    white-space: nowrap;
+    z-index: 1000;
+    transition: 0.5s ease;
+}
+
+.submit-button:hover{
+    background-color: #0071E3;
+    color: white;
+    animation-delay: 200ms;
 }
 
 /* Build a Solution */
+
 
 .build-solution-container{
     display: flex;
@@ -620,6 +650,7 @@ form label{
 .build-solution-container-header p{
     font-size: 18px;
     font-weight: 300;
+    color: grey;
 }
 
 .build-solution-container-footer{
@@ -1038,7 +1069,7 @@ input[type="range"]::-moz-range-thumb {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    border: 2px solid whitesmoke;
+    border: 3px solid whitesmoke;
     background-color: white;
     border-radius: 15px;
     padding: 30px;
@@ -1198,8 +1229,6 @@ table img{
     width: 550px;
     box-shadow: none;
 }
-
-
 
 /* Terms and Conditions */
 

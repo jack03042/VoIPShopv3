@@ -26,6 +26,7 @@ document.addEventListener('DOMContentLoaded', function() {
     function showTab(n) {
         var tab = document.getElementsByClassName("tab");
         tab[n].style.display = "block";
+        tab
         checkValidity(false);
     };
     

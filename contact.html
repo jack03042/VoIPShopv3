@@ -11,25 +11,28 @@
     rel="stylesheet">
     <link rel="icon" type="image/png" href="Assets/icon _voice_.png">
 </head>
-<nav class="nav-container">
-    <div class="navbar">
-        <a href="index.html">
-            <img class="logo" src="Assets/Group 1644.png" alt="Logo"/>
-        </a>
-        <div class="nav-links">
-            <div class="navbar-text">
-                <a href="build-solution.html">Build a Solution</a>
-                <a href="">How it Works</a>
-                <a href="contact.html">Contact Us</a>
-                <a href="">
-                    <img src="Assets/Box.png"></img>
-                </a> 
-            </div>
-            <a href="" class="client-portal">Client Portal</a>
-        </div>
-    </div>
-</nav>
 <body>
+    <header>
+        <nav>
+            <a href="index.html">
+                <img class="logo" src="Assets/Group 1644.png" alt="Logo"/>
+            </a>
+            <div class="nav-links">
+                <div class="navbar-text">
+                    <a href="build-solution.html">Pricing Plans</a>
+                    <a href="#">How it Works</a> 
+                    <a href="contact.html">Contact Us</a>
+                    <a href="#">
+                        <img src="Assets/Box.png" alt="Description of Image" />
+                    </a> 
+                </div>
+                <div class="client-portal">
+                    <a href="#">Client Portal</a> 
+                </div>
+                
+            </div>
+        </nav>
+    </header>
     <div id="contact-us-anchor" class="contact-us-anchor"></div>
     <div class="contact-us-container">
         <div class="contact-us-container-text">
@@ -51,7 +54,7 @@
                 </div>
             </div>
         </div>
-        <form action="" class="contact-us-form">
+        <form   action="https://formspree.io/f/mayrpval" method="POST" class="contact-us-form">
 
             <label for="Name">Name*</label>
             <input class="text-box-small" type="text" id="name" name="name" placeholder="John" required>
@@ -90,12 +93,10 @@
 
             <br>
 
-            <input type="submit" class="closed-button" value="Contact Us">
+            <input type="submit" class="submit-button" value="Contact Us">
         </form>
     </div>
-</body>
-<footer>
-    <div class="footer">
+    <footer>
         <div class="left-footer">
             <p>© 2024 VoIP Shop | All rights reserved.</p>
         </div>
@@ -105,6 +106,6 @@
         <div class="right-footer">
             <p>Contact | Terms & Conditions | Portal</p>
         </div>
-    </div>
-</footer>
+    </footer>
+</body>
 </html>
