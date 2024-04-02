@@ -189,127 +189,8 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-
-    //Virtual Number
-
-    const newNumberInput = document.getElementById('new-number-input');
-    const portNumberInput = document.getElementById("port-number-input");
-    const newNumberBtn = document.getElementById('new-number');
-    const portNumberBtn = document.getElementById('port-number');
-
-
-    window.virtualNumberBtn = function virtualNumberBtn(n) {
-
-        if (n === 0) {
-            newNumberInput.style.display = 'block'
-            newNumberInput.classList.add('slide-in-top')
-            portNumberInput.style.display = 'none'
-            newNumberBtn.classList.add('selected')
-            portNumberBtn.classList.remove('selected')
-            portNumberInput.value = ''
-            checkValidity(false)
-        } else if(n === 1) {
-            portNumberInput.style.display = 'block'
-            portNumberInput.classList.add('slide-in-top')
-            newNumberInput.style.display = 'none'
-            newNumberBtn.classList.remove('selected')
-            portNumberBtn.classList.add('selected')
-            newNumberInput.value = '0'
-            checkValidity(false)
-        }
-    };
-
-    // New Number Validation
-    newNumberInput.addEventListener('change', function () {
-        const newNumberValue = newNumberInput.value;
-
-        if (newNumberValue !== '0') {
-            newNumberInput.style.border = "2px solid #4BD37B";
-            updateServiceArray('Virtual Number', {
-                image: 'Assets/Group 1685.png',
-                title: 'New Number',
-                description: '',
-                quantity: 1,
-                price: formatPrice(90)
-            }, 'Transfer Number'); 
-            checkValidity(true);
-        } else {
-            newNumberInput.style.border = "2px solid whitesmoke";
-            checkValidity(false);
-        }
-    });
-
-    // Transfer Number Validation
-    portNumberInput.addEventListener('input', function () {
-        const portNumberValue = portNumberInput.value;
-
-        if (portNumberValue.length > 0 && portNumberInput.checkValidity()) {
-            portNumberInput.style.border = "2px solid #4BD37B";
-            updateServiceArray('Virtual Number', {
-                image: 'Assets/Group 1685.png',
-                title: 'Transfer Number',
-                description: '[ ' + portNumberValue + ' ]',
-                quantity: 1,
-                price: formatPrice(90)
-            }, 'New Number'); // Specify to remove 'New Number'
-            checkValidity(true);
-        } else {
-            portNumberInput.style.border = "2px solid #FF5A79";
-            checkValidity(false);
-        }
-    });
-
-
-    //Talk time
-
-    // Initialize progress on page load for the range slider
-    const initialTalkTimeValue = document.getElementById('talk-time').value;
-    const max = parseInt(document.getElementById('talk-time').max, 10);
-    const min = parseInt(document.getElementById('talk-time').min, 10);
-    const percentage = ((initialTalkTimeValue - min) / (max - min)) * 100;
-    document.getElementById('talk-time').style.background = `linear-gradient(90deg, #0071E3 ${percentage}%, #D9D9D9 ${percentage}%)`;
-
-    document.getElementById('talk-time').addEventListener('input', function () {
-        const talkTimeValue = this.value; // Using 'this' as it refers to the element that triggered the event
-        const perMinutePrice = 0.28;
-        const talkTimeDescription = document.getElementById('talk-time-description');
-    
-        // Update displayed values for talk time
-        document.getElementById('talk-time-value').textContent = new Intl.NumberFormat('fr-FR').format(talkTimeValue);
-        document.getElementById('total-footer-price').textContent = formatPrice(talkTimeValue * perMinutePrice);
-        updateServiceArray('Talk Time', {
-            image: 'Assets/Group 1684.png',
-            title: 'Talk Time',
-            description: '',
-            quantity: talkTimeValue + ' Minutes',
-            price: formatPrice(talkTimeValue * perMinutePrice)
-        }); // Ensure this function call is properly closed with a semicolon
-    
-        // Conditional descriptions based on talkTimeValue
-        if (talkTimeValue >= 500 && talkTimeValue <= 1500) {
-            talkTimeDescription.textContent = 'For small businesses (1-2 employees)';
-        } else if (talkTimeValue > 1500 && talkTimeValue <= 5000) {
-            talkTimeDescription.textContent = 'For medium businesses (3-10 employees)';
-        } else if (talkTimeValue > 5000) {
-            talkTimeDescription.textContent = 'For large businesses (10+ employees)';
-        } else if (talkTimeValue < 500) {
-            talkTimeDescription.textContent = 'For businesses who only recieve calls';
-        }
-    
-        checkValidity(true);
-    
-        // Update range slider progress
-        const max = parseInt(this.max, 10);
-        const min = parseInt(this.min, 10);
-        const value = parseInt(talkTimeValue, 10);
-        const percentage = ((value - min) / (max - min)) * 100;
-        // Update the background gradient to reflect the current value
-        this.style.background = `linear-gradient(90deg, #0071E3 ${percentage}%, #D9D9D9 ${percentage}%)`;
-    });
-    
-
-    //Hardware
-    window.updateHardware = function updateHardware(event, isAdding) {
+     //Hardware
+     window.updateHardware = function updateHardware(event, isAdding) {
         const hardwareCard = event.target.closest('.hardware-card');
         if (!hardwareCard) return;
     
@@ -411,10 +292,133 @@ document.addEventListener('DOMContentLoaded', function() {
     };
 
     //Horizontal Scroll
-    document.getElementById('scroll-button').addEventListener('click', function() {
-        const hardwareContainer = document.getElementsByClassName('hardware-container-outer')[0];
-        const scrollAmount = 300;
-        hardwareContainer.scrollLeft += scrollAmount;
+    // document.getElementById('scroll-button').addEventListener('click', function() {
+    //     const hardwareContainer = document.getElementsByClassName('hardware-container-outer')[0];
+    //     const scrollAmount = 300;
+    //     hardwareContainer.scrollLeft += scrollAmount;
+    // });
+
+    //Virtual Number
+
+    const newNumberInput = document.getElementById('new-number-input');
+    const portNumberInput = document.getElementById("port-number-input");
+    const newNumberBtn = document.getElementById('new-number');
+    const portNumberBtn = document.getElementById('port-number');
+
+
+    window.virtualNumberBtn = function virtualNumberBtn(n) {
+
+        if (n === 0) {
+            newNumberInput.style.display = 'block'
+            newNumberInput.classList.add('slide-in-top')
+            portNumberInput.style.display = 'none'
+            newNumberBtn.classList.add('selected')
+            portNumberBtn.classList.remove('selected')
+            portNumberInput.value = ''
+            checkValidity(false)
+        } else if(n === 1) {
+            portNumberInput.style.display = 'block'
+            portNumberInput.classList.add('slide-in-top')
+            newNumberInput.style.display = 'none'
+            newNumberBtn.classList.remove('selected')
+            portNumberBtn.classList.add('selected')
+            newNumberInput.value = '0'
+            checkValidity(false)
+        }
+    };
+
+    // New Number Validation
+    newNumberInput.addEventListener('change', function () {
+        const newNumberValue = newNumberInput.value;
+
+        if (newNumberValue !== '0') {
+            newNumberInput.style.border = "2px solid #4BD37B";
+            updateServiceArray('Virtual Number', {
+                image: 'Assets/Group 1685.png',
+                title: 'New Number',
+                description: '',
+                quantity: 1,
+                price: formatPrice(90)
+            }, 'Transfer Number');
+            
+            document.getElementById('total-footer-price').textContent = formatPrice(90);
+            document.getElementById('total-cost-period').style.display = 'inline-flex';
+            checkValidity(true);
+        } else {
+            newNumberInput.style.border = "2px solid whitesmoke";
+            checkValidity(false);
+        }
+    });
+
+    // Transfer Number Validation
+    portNumberInput.addEventListener('input', function () {
+        const portNumberValue = portNumberInput.value;
+
+        if (portNumberValue.length > 0 && portNumberInput.checkValidity()) {
+            portNumberInput.style.border = "2px solid #4BD37B";
+            updateServiceArray('Virtual Number', {
+                image: 'Assets/Group 1685.png',
+                title: 'Transfer Number',
+                description: '[ ' + portNumberValue + ' ]',
+                quantity: 1,
+                price: formatPrice(90)
+            }, 'New Number'); // Specify to remove 'New Number'
+            document.getElementById('total-footer-price').textContent = formatPrice(90);
+            document.getElementById('total-cost-period').style.display = 'inline-flex';
+            checkValidity(true);
+        } else {
+            portNumberInput.style.border = "2px solid #FF5A79";
+            checkValidity(false);
+        }
+    });
+
+
+    //Talk time
+
+    // Initialize progress on page load for the range slider
+    const initialTalkTimeValue = document.getElementById('talk-time').value;
+    const max = parseInt(document.getElementById('talk-time').max, 10);
+    const min = parseInt(document.getElementById('talk-time').min, 10);
+    const percentage = ((initialTalkTimeValue - min) / (max - min)) * 100;
+    document.getElementById('talk-time').style.background = `linear-gradient(90deg, #0071E3 ${percentage}%, #D9D9D9 ${percentage}%)`;
+
+    document.getElementById('talk-time').addEventListener('input', function () {
+        const talkTimeValue = this.value; // Using 'this' as it refers to the element that triggered the event
+        const perMinutePrice = 0.28;
+        const talkTimeDescription = document.getElementById('talk-time-description');
+    
+        // Update displayed values for talk time
+        document.getElementById('talk-time-value').textContent = new Intl.NumberFormat('fr-FR').format(talkTimeValue);
+        document.getElementById('total-footer-price').textContent = formatPrice(talkTimeValue * perMinutePrice);
+        
+        updateServiceArray('Talk Time', {
+            image: 'Assets/Group 1684.png',
+            title: 'Talk Time',
+            description: '',
+            quantity: talkTimeValue + ' Minutes',
+            price: formatPrice(talkTimeValue * perMinutePrice)
+        }); // Ensure this function call is properly closed with a semicolon
+    
+        // Conditional descriptions based on talkTimeValue
+        if (talkTimeValue >= 500 && talkTimeValue <= 1500) {
+            talkTimeDescription.textContent = 'For small businesses (1-2 employees)';
+        } else if (talkTimeValue > 1500 && talkTimeValue <= 5000) {
+            talkTimeDescription.textContent = 'For medium businesses (3-10 employees)';
+        } else if (talkTimeValue > 5000) {
+            talkTimeDescription.textContent = 'For large businesses (10+ employees)';
+        } else if (talkTimeValue < 500) {
+            talkTimeDescription.textContent = 'For businesses who only recieve calls';
+        }
+    
+        checkValidity(true);
+    
+        // Update range slider progress
+        const max = parseInt(this.max, 10);
+        const min = parseInt(this.min, 10);
+        const value = parseInt(talkTimeValue, 10);
+        const percentage = ((value - min) / (max - min)) * 100;
+        // Update the background gradient to reflect the current value
+        this.style.background = `linear-gradient(90deg, #0071E3 ${percentage}%, #D9D9D9 ${percentage}%)`;
     });
 
     //System Features

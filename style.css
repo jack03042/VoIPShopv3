@@ -590,21 +590,21 @@ form label{
     justify-content: center;
     align-items: center;
     cursor: pointer;
+    background-color: #0071E3;
+    color: white;
     border-radius: 15px;
     border: 2px solid #0071E3;
     padding: 10px 20px;
     font-size: 18px;
     font-weight: 400;
-    color: #0071E3;
     white-space: nowrap;
     z-index: 1000;
     transition: 0.5s ease;
 }
 
 .submit-button:hover{
-    background-color: #0071E3;
-    color: white;
-    animation-delay: 200ms;
+    opacity: 0.8;
+    animation-delay: 200ms;    
 }
 
 /* Build a Solution */
@@ -697,6 +697,146 @@ form label{
     width: 70px;
 }
 
+/* Hardware */
+.hardware-container-outer{
+    display: flex;
+    position: relative;
+    white-space: nowrap;
+    width: auto;
+    overflow-x:auto; 
+    /* Enables horizontal scrolling */
+    /* scroll-snap-type: x mandatory;  */
+    /* Enables scroll snap along the x-axis */
+    /* -webkit-overflow-scrolling: touch;  */
+    /* Smooth scrolling on touch devices */
+    /* scrollbar-width: none; */
+}
+
+.hardware-container{
+    display:flex;
+    margin: 0px 10%;
+    gap: 25px;
+}
+
+#scroll-button{
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    height: 50px;
+    width: 80px;
+    transform: translateY(-50%);
+    z-index: 10;
+}
+
+.hardware-container h3{
+    font-weight: 400;
+    color: #E9604D;
+}
+
+.hardware-container h2{
+    font-weight: 500;
+}
+
+.hardware-container p{
+    color: #3d3d3d;
+    text-wrap: wrap;
+}
+
+.hardware-container h4{
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.hardware-container h5{
+    color: grey;
+    font-weight: 400;
+}
+
+.hardware-card{
+    height: 381px;
+    width: 355px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px;
+    border-radius: 20px;
+    background-color: white;
+    border: 2px solid whitesmoke;
+    transition: 0.5s ease;
+    /* scroll-snap-align: start;  */
+    /* This card will snap aligning its start edge with the scroll container's start edge */
+    /* flex: none;  */
+    /* Prevents the card from growing or shrinking */
+}
+
+.hardware-card:hover{
+    box-shadow: 7px 7px 15px #021c3514;
+}
+
+.selected{
+    border: 3px solid #0071E3;
+}
+
+.hardware-title{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.hardware-img{
+    width: 100%;
+    height: auto; 
+    object-fit: cover;
+    max-width: 180px;
+    max-height: 180px;
+}
+
+.hardware-bottom{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.hardware-qty-container{
+    display: flex;
+    align-items: center;
+    background-color: whitesmoke;
+    width: fit-content;
+    height: fit-content;
+    border-radius: 20px;
+    gap: 15px;
+}
+
+.hardware-add, .hardware-minus{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #0071E3;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    transition: 0.5s ease;
+}
+
+.hardware-add:hover, .hardware-minus:hover{
+    opacity: 0.8;
+}
+
+.hardware-minus{
+    display: none;
+}
+
+.hardware-qty{
+    display: none;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.hardware-qty-container img{
+    width: 65%;
+}
 
 /* Virtual Number */
 
@@ -916,140 +1056,6 @@ input[type="range"]::-moz-range-thumb {
     font-weight: 300;
     color: #3d3d3d;
 }
-
-/* Hardware */
-.hardware-container-outer{
-    display: flex;
-    position: relative;
-    white-space: nowrap;
-    width: auto;
-    overflow-x : hidden;
-}
-
-.hardware-container{
-    display:flex;
-    margin: 0px 10%;
-    gap: 35px;
-}
-
-#scroll-button{
-    position: absolute;
-    right: 20px;
-    top: 50%;
-    height: 50px;
-    width: 80px;
-    transform: translateY(-50%);
-    z-index: 10;
-}
-
-.hardware-container h3{
-    font-weight: 400;
-    color: #E9604D;
-}
-
-.hardware-container h2{
-    font-weight: 500;
-}
-
-.hardware-container p{
-    color: #3d3d3d;
-    text-wrap: wrap;
-}
-
-.hardware-container h4{
-    font-size: 20px;
-    font-weight: 500;
-}
-
-.hardware-container h5{
-    color: grey;
-    font-weight: 400;
-}
-
-.hardware-card{
-    height: 381px;
-    width: 355px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    padding: 30px;
-    border-radius: 20px;
-    background-color: white;
-    border: 2px solid whitesmoke;
-    box-shadow: none;
-    transition: 0.5s ease;
-}
-
-.hardware-card:hover{
-    box-shadow: 7px 7px 15px #021c3514;
-}
-
-.selected{
-    border: 3px solid #0071E3;
-}
-
-.hardware-title{
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-}
-
-.hardware-img{
-    width: 100%;
-    height: auto; 
-    object-fit: cover;
-    max-width: 180px;
-    max-height: 180px;
-}
-
-.hardware-bottom{
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    justify-content: space-between;
-}
-
-.hardware-qty-container{
-    display: flex;
-    align-items: center;
-    background-color: whitesmoke;
-    width: fit-content;
-    height: fit-content;
-    border-radius: 20px;
-    gap: 15px;
-}
-
-.hardware-add, .hardware-minus{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #0071E3;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    transition: 0.5s ease;
-}
-
-.hardware-add:hover, .hardware-minus:hover{
-    opacity: 0.8;
-}
-
-.hardware-minus{
-    display: none;
-}
-
-.hardware-qty{
-    display: none;
-    font-size: 18px;
-    font-weight: 600;
-}
-
-.hardware-qty-container img{
-    width: 65%;
-}
-
-
 
 /* system Features */
 
