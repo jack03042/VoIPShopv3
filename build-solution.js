@@ -285,7 +285,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
         document.getElementById('total-footer-price').textContent = formatPrice(totalPrice);
         document.getElementById('total-cost-period').style.display = 'none';
-
         document.getElementById('total-once-off-cost').textContent = formatPrice(totalPrice);
 
         checkValidity(isValid);
@@ -315,6 +314,7 @@ document.addEventListener('DOMContentLoaded', function() {
             newNumberBtn.classList.add('selected')
             portNumberBtn.classList.remove('selected')
             portNumberInput.value = ''
+            document.getElementById('provider-file').style.display = 'none';
             checkValidity(false)
         } else if(n === 1) {
             portNumberInput.style.display = 'block'
@@ -323,6 +323,7 @@ document.addEventListener('DOMContentLoaded', function() {
             newNumberBtn.classList.remove('selected')
             portNumberBtn.classList.add('selected')
             newNumberInput.value = '0'
+            document.getElementById('provider-file').style.display = 'block';
             checkValidity(false)
         }
     };
@@ -516,4 +517,30 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById('total-monthly-cost').textContent = formatPrice(totalPrice);
     }
 
+    //Paystack Recieve Payment
+    const paymentForm = document.getElementById('paymentForm');
+    paymentForm.addEventListener("submit", payWithPaystack, false);
+    
+    function payWithPaystack(e) {
+      e.preventDefault();
+    
+      let handler = PaystackPop.setup({
+        key: 'pk_test_b2d8b06f66918e5683a5f83cf731639e78dbb1bb', // Replace with your public key
+        email: document.getElementById("email-address").value,
+        amount: hardwarePriceTotal() * 100,
+        ref: ''+Math.floor((Math.random() * 1000000000) + 1), // generates a pseudo-unique reference. Please replace with a reference you generated. Or remove the line entirely so our API will generate one for you
+        // label: "Optional string that replaces customer email"
+        currency: 'ZAR',
+        onClose: function(){
+          alert('Window closed.');
+        },
+        callback: function(response){
+          let message = 'Payment complete! Reference: ' + response.reference;
+          alert(message);
+        }
+      });
+    
+      handler.openIframe();
+    }
+  
 });
