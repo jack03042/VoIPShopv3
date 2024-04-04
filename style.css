@@ -234,6 +234,61 @@ nav{
     color: white;
     animation-delay: 200ms;
 }
+
+.menu {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    padding: 0;
+    display: none;
+}
+
+.line {
+    fill: none;
+    stroke: #3d3d3d;
+    stroke-width: 6;
+    transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1),
+        stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.line1 {
+    stroke-dasharray: 60 207;
+    stroke-width: 6;
+}
+.line2 {
+    stroke-dasharray: 60 60;
+    stroke-width: 6;
+}
+.line3 {
+    stroke-dasharray: 60 207;
+    stroke-width: 6;
+}
+.opened .line1 {
+    stroke-dasharray: 90 207;
+    stroke-dashoffset: -134;
+    stroke-width: 6;
+}
+.opened .line2 {
+    stroke-dasharray: 1 60;
+    stroke-dashoffset: -30;
+    stroke-width: 6;
+}
+.opened .line3 {
+    stroke-dasharray: 90 207;
+    stroke-dashoffset: -134;
+    stroke-width: 6;
+}
+
+.drop-down{
+    background-color: #264653;
+    height: 100%;
+    width: 100%;
+    z-index: 2000;
+    position: fixed;
+    top: 55px;
+}
+  
+
 /* Footer !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
 
 footer{
@@ -287,6 +342,8 @@ main{
 }
 
 .hero{
+    display: flex;
+    flex-direction: column;
     height: 255px;
     width: 500px;
     flex: none;
@@ -1277,16 +1334,41 @@ table img{
     font-weight: 300;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 850px) {
+
+    .navbar-text, .client-portal{
+        display: none;
+    }    
+
+    .menu{
+        display: block;
+    }
+
+    .dropdown-menu{
+        display: none;
+    }
+
+    .footer{
+        justify-content: center;
+    }
+
+    .centre-footer img{
+        display: none;
+    }
+
+    .right-footer{
+        display: none;
+    }
     
     main{
-        margin: 50px;
+        margin: 80px;
         gap: 100px;
     }
 
     .hero-container{
         flex-direction: column;
         text-align: center;
+        gap: 20px;
     }
 
     .hero{
@@ -1296,6 +1378,14 @@ table img{
     .hero a{
         border-radius: 15px;
         padding: 15px 200px;
+    }
+
+    .hero-img {
+        order: 1; /* Ensure the image is above the anchor tag */
+    }
+
+    .hero > div:nth-child(3) { /* Targeting the div that wraps the 'Get Pricing' anchor assuming it's the third div in .hero */
+        order: 2; /* Places the 'Get Pricing' anchor below the image */
     }
 
     .segment-container{
@@ -1356,58 +1446,5 @@ table img{
 
     .segment-container{
         padding: 30px;
-    }
-}
-
-@media screen and (max-width: 850px){
-    .navbar-text, .client-portal{
-        display: none;
-    }    
-
-    .menu-icon{
-        display: block;
-    }
-
-    .dropdown-menu{
-        display: none;
-    }
-
-    .footer{
-        justify-content: center;
-    }
-
-    .centre-footer img{
-        display: none;
-    }
-
-    .right-footer{
-        display: none;
-    }
-
-    /* Voice Page */
-
-    .voice-heading{
-        flex-direction: column;
-    }
-
-    .voice-heading-left h1{
-        white-space: nowrap;
-        margin-bottom: 5px;
-    }
-
-    .voice-heading-right{
-        flex-direction: row;
-        justify-content: start;
-        margin-top: 5px;
-        margin-bottom: 10px;
-    }
-
-    .voice-page-container{
-        flex-direction: column;
-    }
-
-    .hardware-grid-container{
-        display: flex;
-        flex-direction: column;
     }
 }
