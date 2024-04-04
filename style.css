@@ -275,14 +275,14 @@ main{
     margin: 100px; 
     gap: 180px;
     max-width: 1500px;
-    border: 1px solid #ccc;
+    /* border: 1px solid #ccc; */
 }
 
 .hero-container{
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 1px solid #ccc;
+    /* border: 1px solid #ccc; */
     /* scroll-snap-type: */
 }
 
@@ -290,7 +290,7 @@ main{
     height: 255px;
     width: 500px;
     flex: none;
-    border: 1px solid #ccc;
+    /* border: 1px solid #ccc; */
 }
 
 
@@ -392,7 +392,7 @@ main{
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    border: 1px solid #ccc;
+    /* border: 1px solid #ccc; */
 }
 
 .description-container img{
@@ -401,7 +401,7 @@ main{
     object-fit:contain;
     max-width: 500px;
     max-height: 500px;
-    border: 1px solid #ccc;
+    /* border: 1px solid #ccc; */
 }
 
 .description-container-inner{
@@ -1281,7 +1281,6 @@ table img{
     main{
         margin: 50px;
         gap: 100px;
-        border: 1px solid #ccc;
     }
 
     .hero-container{
@@ -1312,6 +1311,31 @@ table img{
         overflow-wrap: break-word;
         word-break: break-all;
     } */
+}
+
+@media (max-width: 480px) {
+    main{
+        margin: 20px;
+        gap: 50px;
+    }
+
+    .hero{
+        height: 260px;
+        width: auto;
+    }
+
+    .title h1{
+        font-size: 40px;
+    }
+
+    .hero a{
+        border-radius: 15px;
+        padding: 15px 100px;
+    }
+
+    .segment-container{
+        padding: 30px;
+    }
 }
 
 @media screen and (max-width: 850px){
