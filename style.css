@@ -1306,15 +1306,25 @@ table img{
     .description-container{
         flex-direction: column;
         text-align: center;
+        /* border: 1px solid #ccc; */
+        border-radius: 15px;
         /* padding: 50px; */
     }
 
     .description-container-inner {
+        padding: 15px;
+        /* border: 1px solid #ccc; */
         order: -1; /* Moves text above the image */
     }
 
+    .description-container-text{
+        width: 100%;
+        /* border: 1px solid #ccc; */
+    }
+
     /* Optionally, if you want the image to explicitly be last instead of just after text */
-    .description-ontainer img {
+    .description-container img {
+        padding: 15px;
         order: 1; /* Places the image below the text content */
     }
 
