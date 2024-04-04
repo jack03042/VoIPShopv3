@@ -1336,6 +1336,10 @@ table img{
 
 @media screen and (max-width: 850px) {
 
+    .logo{
+        width: 120px;
+    }
+
     .navbar-text, .client-portal{
         display: none;
     }    
