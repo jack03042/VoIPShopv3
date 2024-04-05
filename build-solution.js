@@ -1,5 +1,14 @@
 document.addEventListener('DOMContentLoaded', function() {
-    
+    //Drop Down Menu
+    const dropdown = document.querySelector('.drop-down');
+    const dropdownBtn = document.querySelector('.menu');
+
+    window.toggleDropdown = function toggleDropdown() {
+        dropdownBtn.classList.toggle('opened');
+        dropdownBtn.setAttribute('aria-expanded', dropdownBtn.classList.contains('opened'))
+        dropdown.classList.toggle('show-menu');
+    }
+
     //Tabs
     var currentTab = 0;
     showTab(currentTab);
