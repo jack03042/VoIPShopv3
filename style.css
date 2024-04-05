@@ -153,9 +153,8 @@ input::placeholder{
 header{
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: start;
     width: 100%;
-    z-index: 1000;
     height: 65px;
     /* border: 1px solid #ccc; */
     /* background-color: thistle; */
@@ -163,24 +162,25 @@ header{
 
 nav{
     position: fixed;
-    width: 90%;
+    width: 100%;
     height: 55px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border-radius: 15px;
+    /* border-radius: 15px; */
     background-color: white;
     max-width: 1500px;
-    /* box-shadow: 0px 0px 15px #021c3514; */
+    box-shadow: 0px 0px 15px #021c3514;
     /* border: 1px solid #ccc; */
-    opacity: 0.9;
-    z-index: 300;
+    /* opacity: 0.9; */
+    z-index: 200;
     transition: 0.5s ease;
+    padding: 20px;
 }  
 
 .logo{
     width: 180px;
-    margin-left: 20px;
+    /* margin-left: 20px; */
     margin-top: 4px;
 }
 
@@ -280,14 +280,47 @@ nav{
 }
 
 .drop-down{
-    background-color: #264653;
-    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    gap: 20px;
+    background-color: rgb(255, 255, 255);
     width: 100%;
-    z-index: 2000;
+    height: 25%;
+    top: 0;
+    left: 0;
+    z-index: 200;
     position: fixed;
     top: 55px;
+    padding: 30px;
+    display: none;
+    overflow-x: hidden;
+    /* box-shadow: 0px 0px 15px #021c3514; */
+    /* border: 1px solid #ccc; */
 }
-  
+
+.show-menu{
+    display: inline-flex;
+    animation: expand 0.5s ease;
+}
+
+@keyframes expand {
+    from {
+        height: 0%;
+    }
+    to {
+        height: 25%;
+    }
+}
+
+.drop-down a{
+    font-family: inherit;
+    font-size: 25px;
+    font-weight: 600;
+    color: #3d3d3d;
+    transition: 0.5s ease;
+} 
 
 /* Footer !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
 
@@ -1337,7 +1370,7 @@ table img{
 @media screen and (max-width: 850px) {
 
     .logo{
-        width: 120px;
+        width: 130px;
     }
 
     .navbar-text, .client-portal{
