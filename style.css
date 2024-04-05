@@ -287,7 +287,7 @@ nav{
     gap: 20px;
     background-color: rgb(255, 255, 255);
     width: 100%;
-    height: 25%;
+    height: 40%;
     top: 0;
     left: 0;
     z-index: 200;
@@ -310,7 +310,7 @@ nav{
         height: 0%;
     }
     to {
-        height: 25%;
+        height: 40%;
     }
 }
 
@@ -377,17 +377,17 @@ main{
 .hero{
     display: flex;
     flex-direction: column;
-    height: 255px;
-    width: 500px;
+    justify-content: center;
+    max-width: 450px;
+    height: fit-content;
     flex: none;
     /* border: 1px solid #ccc; */
 }
 
-
 .hero-img img{
     width: 100%;
     height: auto; 
-    object-fit:contain;
+    object-fit: contain;
     max-width: 700px;
     max-height: 700px;
     /* border: 1px solid #ccc; */
@@ -408,8 +408,10 @@ main{
     /* border: 1px solid #ccc; */
 }
 
-.hero a{
-    padding: 15px 50px;
+.call-to-action{
+    width: 100%;
+    max-width: 250px;
+    padding: 15px;
     border-radius: 15px;
     background-color: #0071E3;
     color: rgba(245, 245, 245, 0.945);
@@ -420,11 +422,18 @@ main{
     transition: 0.5s ease;
 }
 
-.hero a:hover{
+.call-to-action:hover{
     color: white;
     opacity: 0.9;
 }
 
+.call-to-action-mobile{
+    display: none;
+}
+
+.call-to-action:first-child{
+    display: none;
+}
 
 .segment-container{
     display: flex;
@@ -1405,30 +1414,46 @@ table img{
     .hero-container{
         flex-direction: column;
         text-align: center;
-        gap: 20px;
     }
 
-    .hero{
-        width: 100%;
+    .title h1{
+        font-size: 35px;
     }
 
-    .hero a{
-        border-radius: 15px;
-        padding: 15px 200px;
+    .slogan h3{
+        font-size: 20px;
     }
 
-    .hero-img {
-        order: 1; /* Ensure the image is above the anchor tag */
+    .call-to-action-desktop {
+        display: none; /* Hide desktop CTA on smaller screens */
     }
 
-    .hero > div:nth-child(3) { /* Targeting the div that wraps the 'Get Pricing' anchor assuming it's the third div in .hero */
-        order: 2; /* Places the 'Get Pricing' anchor below the image */
+    .call-to-action-mobile {
+        display: inline-block; /* Show mobile CTA on smaller screens */
+        margin-top: 30px;
     }
 
     .segment-container{
         flex-direction: column;
         /* padding: 50px; */
     }
+
+    .segment-container-inner{
+        padding: 50px;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .segment-container-text h2{
+        font-size: 25px;
+    }
+    
+    .segment-container-inner p{
+        font-size: 16px;
+        text-align: center;
+    }
+    
 
     .description-container{
         flex-direction: column;
@@ -1449,16 +1474,22 @@ table img{
         /* border: 1px solid #ccc; */
     }
 
-    /* Optionally, if you want the image to explicitly be last instead of just after text */
     .description-container img {
         padding: 15px;
         order: 1; /* Places the image below the text content */
     }
 
-    /* .features-card-text p {
-        overflow-wrap: break-word;
-        word-break: break-all;
-    } */
+    .description-container-text h3{
+        font-size: 18px;
+    }
+
+    .description-container-text h2{
+        font-size: 25px;
+    }
+
+    .description-container-text p{
+        font-size: 16px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -1467,21 +1498,11 @@ table img{
         gap: 50px;
     }
 
-    .hero{
-        height: 260px;
-        width: auto;
-    }
-
-    .title h1{
-        font-size: 40px;
-    }
-
-    .hero a{
-        border-radius: 15px;
-        padding: 15px 100px;
-    }
-
     .segment-container{
         padding: 30px;
+    }
+
+    .segment-container-inner{
+        padding: 10px;
     }
 }
