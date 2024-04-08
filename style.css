@@ -713,21 +713,16 @@ form label{
 .build-solution-container{
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    width: 100%;
     background-color: rgb(250,250,252);
-    /* border-radius: 30px; */
-    padding-top: 40px;
-    align-items: center; /* Center the content vertically */
-    overflow: hidden; /* Prevents overflow, but be cautious using this */
+    padding-top: 5%;
+    /* border: 1px solid #ccc; */
 }
 
 .build-solution-container-inner{
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    width: 100%; /* Ensure it spans the full width */
-    width: 1500px;
-    margin: 0 auto; /* Center it within the parent */
+    /* border: 1px solid #ccc; */
 }
 
 
@@ -738,19 +733,22 @@ form label{
 .build-solution-container-header{
     display: flex;
     flex-direction: column;
-    text-align: center;
     gap: 10px;
-    margin-bottom: 40px;
+    margin-left: 5%;
+    margin-bottom: 3%;
+    /* border: 1px solid #ccc; */
 }
 
 .build-solution-container-header h1{
     color: #07122b;
+    /* border: 1px solid #ccc; */
 }
 
 .build-solution-container-header p{
     font-size: 18px;
     font-weight: 300;
     color: grey;
+    /* border: 1px solid #ccc; */
 }
 
 .build-solution-container-footer{
@@ -758,6 +756,7 @@ form label{
     flex-direction: column;
     align-items: center;
     padding: 40px;
+    /* border: 1px solid #ccc; */
 }
 
 .footer-total-container{
@@ -800,10 +799,14 @@ form label{
 /* Hardware */
 .hardware-container-outer{
     display: flex;
-    position: relative;
-    white-space: nowrap;
-    width: auto;
-    overflow-x:auto; 
+    justify-content: start;
+    overflow: scroll;
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+    /* overflow-x: scroll;  */
+    padding-left: 5%;
+    padding-right: 5%;
+    /* border: 1px solid #ccc; */
     /* Enables horizontal scrolling */
     /* scroll-snap-type: x mandatory;  */
     /* Enables scroll snap along the x-axis */
@@ -814,7 +817,7 @@ form label{
 
 .hardware-container{
     display:flex;
-    margin: 0px 10%;
+    /* margin: 0px 10%; */
     gap: 25px;
 }
 
@@ -943,10 +946,16 @@ form label{
 .virtual-number-container-options{
     display: flex;
     flex-direction: row;
-    justify-content: center;
-    height: 415px;
+    /* justify-content: center; */
+    overflow: scroll;
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+    /* overflow-x: scroll;  */
+    padding-left: 5%;
+    padding-right: 5%;
+    /* height: 415px; */
     gap: 30px;
-    /* border: 1px solid black; */
+    /* border: 1px solid #ccc; */
 }
 
 .virtual-number-container-new, 
@@ -1074,21 +1083,20 @@ form label{
 .talk-time-container{
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 300px;
     gap: 30px;
+    margin-left: 5%;
+    /* border: 1px solid #ccc; */
 }
 
 .minutes-total-container{
     display: flex;
     flex-direction: row;
-    align-items: center;
-    justify-content: center;
     gap: 4px;
     font-size: 30px;
     font-weight: 700;
     color: #2A9D8F;
+    /* border: 1px solid #ccc; */
+
 }
 
 .minutes-slider-container{
@@ -1105,12 +1113,14 @@ form label{
     justify-content: space-between;
     gap: 20px;
     width: 400px;
+    /* border: 1px solid #ccc; */
 }
 
 .minutes-slider-indicators p{
     font-size: 18px;
     font-weight: 300;
     color: grey;
+    text-wrap: nowrap;
 }
 
 input[type="range"] {
@@ -1122,6 +1132,7 @@ input[type="range"] {
     border-radius: 10px;
     outline: none;
     transition: background 0.2s ease; /* Smooth transition for the background */
+    border: 1px solid #ccc;
 }
 
 /* Thumb for WebKit browsers */
@@ -1164,7 +1175,12 @@ input[type="range"]::-moz-range-thumb {
     flex-direction: row;
     align-items: center;
     gap: 20px;
-    padding: 0px 100px;
+    overflow: scroll;
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+    /* overflow-x: scroll;  */
+    padding-left: 5%;
+    padding-right: 5%;
     height: 350px;
     width: auto;
     overflow-x :auto;
@@ -1490,6 +1506,12 @@ table img{
     .description-container-text p{
         font-size: 16px;
     }
+
+    .check-out{
+        flex-direction: column;
+        gap: 20px;
+    }
+
 }
 
 @media (max-width: 480px) {
@@ -1504,5 +1526,14 @@ table img{
 
     .segment-container-inner{
         padding: 10px;
+    }
+
+    .minutes-slider-indicators{
+        width: 250px;
+        gap: 0;
+    }
+
+    input[type='range']{
+        width: 250px;
     }
 }
