@@ -287,7 +287,7 @@ nav{
     gap: 20px;
     background-color: rgb(255, 255, 255);
     width: 100%;
-    height: 40%;
+    height: 30%;
     top: 0;
     left: 0;
     z-index: 200;
@@ -310,7 +310,7 @@ nav{
         height: 0%;
     }
     to {
-        height: 40%;
+        height: 30%;
     }
 }
 
@@ -715,7 +715,7 @@ form label{
     flex-direction: column;
     width: 100%;
     background-color: rgb(250,250,252);
-    padding-top: 5%;
+    padding-top: 20px;
     /* border: 1px solid #ccc; */
 }
 
@@ -733,9 +733,8 @@ form label{
 .build-solution-container-header{
     display: flex;
     flex-direction: column;
-    gap: 10px;
-    margin-left: 5%;
-    margin-bottom: 3%;
+    text-align: center;
+    margin-bottom: 25px;
     /* border: 1px solid #ccc; */
 }
 
@@ -946,7 +945,7 @@ form label{
 .virtual-number-container-options{
     display: flex;
     flex-direction: row;
-    /* justify-content: center; */
+    justify-content: center;
     overflow: scroll;
     -ms-overflow-style: none; /* IE and Edge */
     scrollbar-width: none; /* Firefox */
@@ -1083,8 +1082,9 @@ form label{
 .talk-time-container{
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     gap: 30px;
-    margin-left: 5%;
     /* border: 1px solid #ccc; */
 }
 
@@ -1181,7 +1181,6 @@ input[type="range"]::-moz-range-thumb {
     /* overflow-x: scroll;  */
     padding-left: 5%;
     padding-right: 5%;
-    height: 350px;
     width: auto;
     overflow-x :auto;
     /* border: 1px solid #ccc; */
@@ -1510,6 +1509,11 @@ table img{
     .check-out{
         flex-direction: column;
         gap: 20px;
+    }
+
+    .virtual-number-container-options{
+        justify-content: start;
+        /* margin-left: 5%; */
     }
 
 }
