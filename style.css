@@ -805,19 +805,19 @@ form label{
     /* overflow-x: scroll;  */
     padding-left: 5%;
     padding-right: 5%;
+    scroll-padding-left: 5%;
     /* border: 1px solid #ccc; */
     /* Enables horizontal scrolling */
-    /* scroll-snap-type: x mandatory;  */
+    scroll-snap-type: x mandatory; 
     /* Enables scroll snap along the x-axis */
-    /* -webkit-overflow-scrolling: touch;  */
+    -webkit-overflow-scrolling: touch; 
     /* Smooth scrolling on touch devices */
-    /* scrollbar-width: none; */
 }
 
 .hardware-container{
     display:flex;
     /* margin: 0px 10%; */
-    gap: 25px;
+    /* gap: 25px; */
 }
 
 #scroll-button{
@@ -862,14 +862,12 @@ form label{
     align-items: center;
     justify-content: space-between;
     padding: 30px;
+    margin: 10px;
     border-radius: 20px;
     background-color: white;
     border: 2px solid whitesmoke;
     transition: 0.5s ease;
-    /* scroll-snap-align: start;  */
-    /* This card will snap aligning its start edge with the scroll container's start edge */
-    /* flex: none;  */
-    /* Prevents the card from growing or shrinking */
+    scroll-snap-align: start; 
 }
 
 .hardware-card:hover{
@@ -952,6 +950,8 @@ form label{
     /* overflow-x: scroll;  */
     padding-left: 5%;
     padding-right: 5%;
+    scroll-padding-left: 5%;
+    scroll-snap-type: x mandatory; 
     /* height: 415px; */
     gap: 30px;
     /* border: 1px solid #ccc; */
@@ -983,6 +983,7 @@ form label{
     border-radius: 20px;
     transition: 0.5s ease;
     z-index: 100;
+    scroll-snap-align: start;
 }
 
 .virtual-number-container-options button::after {
@@ -1179,8 +1180,10 @@ input[type="range"]::-moz-range-thumb {
     -ms-overflow-style: none; /* IE and Edge */
     scrollbar-width: none; /* Firefox */
     /* overflow-x: scroll;  */
+    scroll-snap-type: x mandatory;
     padding-left: 5%;
     padding-right: 5%;
+    scroll-padding-left: 5%;
     width: auto;
     overflow-x :auto;
     /* border: 1px solid #ccc; */
@@ -1199,6 +1202,7 @@ input[type="range"]::-moz-range-thumb {
     text-wrap: wrap;
     transition: 0.5s ease;
     flex: none;
+    scroll-snap-align: start;
 }
 
 .features-card:hover{
@@ -1270,12 +1274,12 @@ input[type="range"]::-moz-range-thumb {
     justify-content: center;
     flex-direction: row;
     gap: 20px;
+    width: 100%;
 }
 
 .review-solution{
     display: flex;
     flex-direction: column;
-
 }
 
 .review-services{
@@ -1514,6 +1518,47 @@ table img{
     .virtual-number-container-options{
         justify-content: start;
         /* margin-left: 5%; */
+    }
+
+    th{
+        width: 100px;
+    }
+
+    th:first-child{
+        width: 30px;
+    }
+    
+    td:last-child, th:last-child{
+        padding: 5px;
+        text-align: right;
+    }
+    
+    thead{
+        font-family: inherit;
+        color: grey;
+        border-bottom: 0.5px solid grey;
+    }
+    
+    td{
+        padding: 10px;
+        white-space: nowrap;
+    }
+    
+    tfoot{
+        text-align: right;
+        font-weight: 600;
+        border-top: 0.5px solid grey;
+    }
+    
+    table img{
+        float: right;
+        width: 40px;
+    }
+
+    .client-info form{
+        gap: 20px;
+        margin-top: 35px;
+        width: 100%;
     }
 
 }
