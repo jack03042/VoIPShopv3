@@ -18,6 +18,8 @@ app.listen(port, () => {
 });
 
 app.get('/paystack-key', (req, res) => {
-  res.send({ key: process.env.PAYSTACK_PUBLIC_KEY });
+  res.set('Cache-Control', 'no-store');
+  res.json({ key: process.env.PAYSTACK_PUBLIC_KEY });
 });
+
 
