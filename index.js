@@ -1,3 +1,8 @@
+app.get('/paystack-key', (req, res) => {
+  res.set('Cache-Control', 'no-store');
+  res.json({ key: process.env.PAYSTACK_PUBLIC_KEY });
+});
+
 const express = require('express');
 const path = require('path');
 require('dotenv').config();
@@ -17,9 +22,6 @@ app.listen(port, () => {
   console.log(`Server running on port ${port}`);
 });
 
-app.get('/paystack-key', (req, res) => {
-  res.set('Cache-Control', 'no-store');
-  res.json({ key: process.env.PAYSTACK_PUBLIC_KEY });
-});
+
 
 
