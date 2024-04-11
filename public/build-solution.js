@@ -533,23 +533,32 @@ document.addEventListener('DOMContentLoaded', function() {
     function payWithPaystack(e) {
       e.preventDefault();
     
-      let handler = PaystackPop.setup({
-        key: 'pk_test_b2d8b06f66918e5683a5f83cf731639e78dbb1bb', // Replace with your public key
-        email: document.getElementById("email-address").value,
-        amount: hardwarePriceTotal() * 100,
-        ref: ''+Math.floor((Math.random() * 1000000000) + 1), // generates a pseudo-unique reference. Please replace with a reference you generated. Or remove the line entirely so our API will generate one for you
-        // label: "Optional string that replaces customer email"
-        currency: 'ZAR',
-        onClose: function(){
-          alert('Window closed.');
-        },
-        callback: function(response){
-          let message = 'Payment complete! Reference: ' + response.reference;
-          alert(message);
-        }
-      });
+      // Fetch the Paystack public key from the server
+      fetch('/paystack-key')
+        .then(response => response.json())
+        .then(data => {
+          let handler = PaystackPop.setup({
+            key: data.key, // Use the public key from the server
+            email: document.getElementById("email-address").value,
+            amount: hardwarePriceTotal() * 100,
+            ref: '' + Math.floor((Math.random() * 1000000000) + 1),
+            currency: 'ZAR',
+            onClose: function(){
+              alert('Window closed.');
+            },
+            callback: function(response){
+              let message = 'Payment complete! Reference: ' + response.reference;
+              alert(message);
+            }
+          });
     
-      handler.openIframe();
+          handler.openIframe();
+        })
+        .catch(error => {
+          console.error('Failed to load Paystack key:', error);
+          alert('There was an error processing your payment. Please try again.');
+        });
     }
+    
   
 });

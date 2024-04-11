@@ -16,3 +16,8 @@ app.get('*', (req, res) => {
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);
 });
+
+app.get('/paystack-key', (req, res) => {
+  res.send({ key: process.env.PAYSTACK_PUBLIC_KEY });
+});
+
