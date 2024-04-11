@@ -1,13 +1,15 @@
-app.get('/paystack-key', (req, res) => {
-  res.set('Cache-Control', 'no-store');
-  res.json({ key: process.env.PAYSTACK_PUBLIC_KEY });
-});
-
 const express = require('express');
 const path = require('path');
 require('dotenv').config();
 
 const app = express();
+
+// Correctly position the Paystack key route before static file serving and catch-all
+app.get('/paystack-key', (req, res) => {
+  res.set('Cache-Control', 'no-store');
+  res.json({ key: process.env.PAYSTACK_PUBLIC_KEY });
+});
+
 const port = process.env.PORT || 3000;
 
 // Serve static files from the 'public' directory
