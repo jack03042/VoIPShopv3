@@ -5,6 +5,13 @@ require('dotenv').config();
 const app = express();
 const port = process.env.PORT || 3000;
 
+const cors = require('cors');
+
+// Enable CORS for requests from your domain
+app.use(cors({
+  origin: 'http://www.voipshop.co.za'
+}));
+
 // Correctly position the Paystack key route before static file serving and catch-all
 app.get('/paystack-key', (req, res) => {
   res.set('Cache-Control', 'no-store');
@@ -23,3 +30,5 @@ app.get('*', (req, res) => {
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);
 });
+
+app.use(express.static(path.join(__dirname, 'docs')));
