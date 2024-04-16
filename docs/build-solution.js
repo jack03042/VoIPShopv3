@@ -534,8 +534,8 @@ document.addEventListener('DOMContentLoaded', function() {
       e.preventDefault();
     
       // Fetch the Paystack public key from the server
-      fetch('/paystack-key')
-        .then(response => response.json())
+      fetch('https://pure-crag-27853-51c2ba2d1731.herokuapp.com/paystack-key')
+      .then(response => response.json())
         .then(data => {
           let handler = PaystackPop.setup({
             key: data.key, // Use the public key from the server
