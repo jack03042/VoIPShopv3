@@ -7,10 +7,14 @@ const port = process.env.PORT || 3000;
 
 const cors = require('cors');
 
-// Enable CORS for requests from your domain
-app.use(cors({
-  origin: 'http://www.voipshop.co.za'
-}));
+// Enable CORS for your front-end domain
+const corsOptions = {
+  origin: 'https://www.voipshop.co.za',
+  optionsSuccessStatus: 200
+};
+
+app.use(cors(corsOptions));
+// Now, your existing routes will respect the CORS settings.
 
 // Correctly position the Paystack key route before static file serving and catch-all
 app.get('/paystack-key', (req, res) => {
