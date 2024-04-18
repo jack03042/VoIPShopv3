@@ -9,7 +9,7 @@ const cors = require('cors');
 
 // Enable CORS for your front-end domain
 const corsOptions = {
-  origin: 'https://www.voipshop.co.za',
+  origin: ['https://www.voipshop.co.za', 'https://voipshop.co.za'],
   optionsSuccessStatus: 200
 };
 
