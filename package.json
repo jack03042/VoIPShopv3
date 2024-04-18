@@ -1,7 +1,7 @@
 {
   "name": "voipshopv3",
-  "version": "1.0.0",
-  "description": "Your project description",
+  "version": "0.3.0",
+  "description": "Telecommunications store",
   "main": "index.js",
   "scripts": {
     "start": "node index.js"
